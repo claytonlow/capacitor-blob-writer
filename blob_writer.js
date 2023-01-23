@@ -117,6 +117,7 @@ function write_blob(options) {
         recursive,
         on_fallback
     } = options;
+    console.log('checkkk-----------------------------------')
     if (Capacitor.getPlatform() === "web") {
         return (
             fast_mode
