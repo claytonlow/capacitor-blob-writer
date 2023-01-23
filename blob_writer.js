@@ -129,6 +129,7 @@ function write_blob(options) {
         Filesystem.getUri({path, directory})
     ]).then(function ([config, file_info]) {
         const absolute_path = file_info.uri.replace("file://", "");
+        console.log('about to fetch')
         return fetch(
             config.base_url + absolute_path + (
                 recursive
@@ -151,6 +152,7 @@ function write_blob(options) {
             return file_info.uri;
         });
     }).catch(function on_fail(error) {
+        console.log('were in catch')
         if (on_fallback !== undefined) {
             on_fallback(error);
         }
